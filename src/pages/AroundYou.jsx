@@ -13,7 +13,6 @@ const CountryTracks = () => {
   const { country, loading } = useGetLocation();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   const { data, isFetching, error } = useGetSongsByCountryQuery(country);
-  console.log(country);
   if (isFetching && loading) return <Loader title="Loading songs around you" />;
 
   if (error && country) return <Error />;
